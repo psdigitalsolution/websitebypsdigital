@@ -9,14 +9,15 @@
 
 <style>
 
-/* =========================
-   GOOGLE FONT
-========================= */
+/* =========================================
+   PS DIGITAL SOLUTIONS - PREMIUM CSS
+========================================= */
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
 
-/* =========================
+/* =========================================
    RESET
-========================= */
+========================================= */
 
 *{
     margin:0;
@@ -31,16 +32,30 @@ html{
 body{
     font-family:'Poppins',sans-serif;
     overflow-x:hidden;
+
     background:
     radial-gradient(circle at top left,#fffde4 0%,transparent 30%),
     radial-gradient(circle at bottom right,#fff7c2 0%,transparent 30%),
     linear-gradient(135deg,#fffff5,#ffffe8,#FFFFC5);
+
     color:#3b2f1b;
 }
 
-/* =========================
+/* REMOVE EXTRA CROSS / ICON */
+
+body::before,
+body::after,
+header::before,
+header::after,
+nav::before,
+nav::after{
+    display:none !important;
+    content:none !important;
+}
+
+/* =========================================
    SCROLLBAR
-========================= */
+========================================= */
 
 ::-webkit-scrollbar{
     width:8px;
@@ -51,9 +66,9 @@ body{
     border-radius:10px;
 }
 
-/* =========================
+/* =========================================
    GLOBAL
-========================= */
+========================================= */
 
 img{
     max-width:100%;
@@ -75,8 +90,8 @@ a{
 
 .section-title h2{
     font-size:48px;
-    color:#4a3820;
     margin-bottom:10px;
+    color:#4a3820;
 }
 
 .section-title span{
@@ -86,19 +101,20 @@ a{
 .section-title p{
     max-width:850px;
     margin:auto;
-    line-height:1.8;
+    line-height:1.9;
     color:#5f5135;
 }
 
-/* =========================
+/* =========================================
    HEADER
-========================= */
+========================================= */
 
 header{
     position:fixed;
     top:0;
     left:0;
     width:100%;
+
     z-index:9999;
 
     display:flex;
@@ -107,19 +123,19 @@ header{
 
     padding:15px 70px;
 
-    background:rgba(255,255,255,0.55);
+    background:rgba(255,255,255,.55);
     backdrop-filter:blur(18px);
 
-    border-bottom:1px solid rgba(255,255,255,0.7);
+    border-bottom:1px solid rgba(255,255,255,.7);
 
     box-shadow:
-    0 10px 30px rgba(0,0,0,0.08),
-    inset 0 1px 4px rgba(255,255,255,0.7);
+    0 10px 30px rgba(0,0,0,.08),
+    inset 0 1px 4px rgba(255,255,255,.7);
 }
 
-/* =========================
+/* =========================================
    LOGO
-========================= */
+========================================= */
 
 .logo{
     display:flex;
@@ -131,12 +147,12 @@ header{
     width:auto;
     object-fit:contain;
 
-    filter:drop-shadow(0 5px 10px rgba(0,0,0,0.12));
+    filter:drop-shadow(0 5px 10px rgba(0,0,0,.15));
 }
 
-/* =========================
+/* =========================================
    NAVBAR
-========================= */
+========================================= */
 
 nav{
     display:flex;
@@ -159,6 +175,7 @@ nav a:hover{
 nav a::after{
     content:'';
     position:absolute;
+
     left:0;
     bottom:-6px;
 
@@ -166,6 +183,7 @@ nav a::after{
     height:2px;
 
     background:#b68b2c;
+
     transition:.4s;
 }
 
@@ -173,9 +191,9 @@ nav a:hover::after{
     width:100%;
 }
 
-/* =========================
+/* =========================================
    CALL BUTTON
-========================= */
+========================================= */
 
 .call-btn{
     width:52px;
@@ -190,6 +208,7 @@ nav a:hover::after{
     font-size:22px;
 
     background:linear-gradient(145deg,#ffffff,#fff3b0);
+
     color:#8a6a1f;
 
     cursor:pointer;
@@ -205,9 +224,9 @@ nav a:hover::after{
     transform:translateY(-3px) scale(1.05);
 }
 
-/* =========================
+/* =========================================
    HERO SECTION
-========================= */
+========================================= */
 
 .hero{
     min-height:100vh;
@@ -215,7 +234,8 @@ nav a:hover::after{
     display:flex;
     align-items:center;
     justify-content:space-between;
-    gap:50px;
+
+    gap:60px;
 
     padding:150px 80px 80px;
 
@@ -225,6 +245,7 @@ nav a:hover::after{
 
 .hero::before{
     content:'';
+
     position:absolute;
 
     width:600px;
@@ -238,11 +259,13 @@ nav a:hover::after{
     background:linear-gradient(#fff9c4,#ffe082);
 
     filter:blur(140px);
+
     opacity:.45;
 }
 
 .hero::after{
     content:'';
+
     position:absolute;
 
     width:500px;
@@ -256,6 +279,7 @@ nav a:hover::after{
     background:#fff3a0;
 
     filter:blur(140px);
+
     opacity:.35;
 }
 
@@ -268,14 +292,17 @@ nav a:hover::after{
 .hero-content h1{
     font-size:68px;
     line-height:1.15;
+
     margin-bottom:22px;
 
-    color:#4a3820;
     font-weight:800;
+
+    color:#4a3820;
 }
 
 .hero-content span{
     background:linear-gradient(to right,#d4a937,#8b6a1d);
+
     -webkit-background-clip:text;
     -webkit-text-fill-color:transparent;
 }
@@ -283,13 +310,13 @@ nav a:hover::after{
 .hero-content p{
     font-size:19px;
     line-height:1.9;
+
     color:#5f5135;
-    max-width:700px;
 }
 
-/* =========================
+/* =========================================
    HERO IMAGE
-========================= */
+========================================= */
 
 .hero-image{
     flex:1;
@@ -299,11 +326,12 @@ nav a:hover::after{
 
 .image-box{
     overflow:hidden;
+
     border-radius:30px;
 
-    transform:perspective(1000px) rotateY(-7deg);
-
     border:2px solid rgba(255,255,255,.7);
+
+    transform:perspective(1000px) rotateY(-7deg);
 
     box-shadow:
     0 25px 60px rgba(0,0,0,.16),
@@ -322,9 +350,9 @@ nav a:hover::after{
     object-fit:cover;
 }
 
-/* =========================
+/* =========================================
    FORM SECTION
-========================= */
+========================================= */
 
 .form-section{
     width:100%;
@@ -360,9 +388,11 @@ nav a:hover::after{
 
 .form-box h3{
     text-align:center;
+
     margin-bottom:20px;
 
     font-size:26px;
+
     color:#4b3b22;
 }
 
@@ -371,6 +401,7 @@ nav a:hover::after{
     width:100%;
 
     padding:14px 16px;
+
     margin-bottom:14px;
 
     border:none;
@@ -393,11 +424,13 @@ nav a:hover::after{
     padding:14px;
 
     border:none;
+
     border-radius:14px;
 
     background:linear-gradient(135deg,#fff1a6,#d8b04a);
 
     color:#4a3820;
+
     font-size:16px;
     font-weight:700;
 
@@ -414,13 +447,15 @@ nav a:hover::after{
     transform:translateY(-2px);
 }
 
-/* =========================
+/* =========================================
    PORTFOLIO
-========================= */
+========================================= */
 
 .portfolio{
     display:grid;
+
     grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
     gap:30px;
 }
 
@@ -464,31 +499,36 @@ nav a:hover::after{
     line-height:1.8;
 }
 
-/* =========================
+/* =========================================
    WHO SECTION
-========================= */
+========================================= */
 
 .who{
     display:grid;
     grid-template-columns:2fr 1fr;
+
     gap:50px;
+
     align-items:center;
 }
 
 .who p{
     font-size:18px;
     line-height:2;
+
     color:#5f5135;
 }
 
 .stats{
     display:grid;
     grid-template-columns:1fr 1fr;
+
     gap:20px;
 }
 
 .stat{
     padding:30px;
+
     text-align:center;
 
     border-radius:22px;
@@ -502,15 +542,17 @@ nav a:hover::after{
 
 .stat strong{
     display:block;
+
     margin-bottom:8px;
 
     font-size:40px;
+
     color:#b68b2c;
 }
 
-/* =========================
+/* =========================================
    FOOTER
-========================= */
+========================================= */
 
 footer{
     padding:80px;
@@ -522,7 +564,9 @@ footer{
 
 .footer-grid{
     display:grid;
+
     grid-template-columns:2fr 1fr 1fr 1fr;
+
     gap:40px;
 }
 
@@ -532,20 +576,24 @@ footer{
 
 footer h4{
     font-size:22px;
+
     margin-bottom:18px;
+
     color:#4a3820;
 }
 
 footer p,
 footer li{
     list-style:none;
+
     line-height:2;
+
     color:#5f5135;
 }
 
-/* =========================
+/* =========================================
    WHATSAPP
-========================= */
+========================================= */
 
 .whatsapp{
     position:fixed;
@@ -568,18 +616,18 @@ footer li{
 
     color:#4a3820;
 
-    z-index:999;
-
     cursor:pointer;
+
+    z-index:99999;
 
     box-shadow:
     0 12px 30px rgba(0,0,0,.18),
     inset 0 2px 8px rgba(255,255,255,.9);
 }
 
-/* =========================
+/* =========================================
    POPUP
-========================= */
+========================================= */
 
 .about-popup{
     position:fixed;
@@ -592,7 +640,7 @@ footer li{
 
     overflow-y:auto;
 
-    z-index:99999;
+    z-index:999999;
 
     transition:.5s;
 
@@ -610,41 +658,68 @@ footer li{
 
 .about-content{
     max-width:950px;
+
     margin:auto;
-    padding-top:60px;
+
+    padding-top:70px;
 }
 
 .about-content h2{
     font-size:55px;
+
     margin-bottom:30px;
+
     color:#4a3820;
 }
 
 .about-content p{
     font-size:18px;
+
     line-height:2;
+
     margin-bottom:18px;
+
     color:#5f5135;
 }
 
+/* =========================================
+   CLOSE BUTTON
+========================================= */
+
 .close-btn{
-    position:fixed;
+    position:fixed !important;
 
-    top:22px;
-    right:30px;
+    top:15px !important;
+    right:15px !important;
 
-    font-size:42px;
+    width:46px;
+    height:46px;
 
-    color:#8b6a1d;
+    display:flex !important;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:linear-gradient(135deg,#fff1a6,#d8b04a);
+
+    color:#4a3820;
+
+    font-size:28px !important;
+    font-weight:700;
 
     cursor:pointer;
 
-    z-index:999999;
+    z-index:999999999 !important;
+
+    box-shadow:
+    0 10px 25px rgba(0,0,0,.18),
+    inset 0 2px 6px rgba(255,255,255,.8);
 }
 
-/* =========================
+/* =========================================
    TABLET
-========================= */
+========================================= */
 
 @media(max-width:992px){
 
@@ -654,7 +729,9 @@ header{
 
 .hero{
     flex-direction:column;
+
     text-align:center;
+
     padding:140px 25px 70px;
 }
 
@@ -688,47 +765,58 @@ header{
 
 }
 
-/* =========================
+/* =========================================
    MOBILE
-========================= */
+========================================= */
 
 @media(max-width:768px){
 
 header{
     flex-direction:column;
-    gap:15px;
-    padding:15px;
+
+    gap:14px;
+
+    padding:12px 15px;
 }
 
 .logo img{
-    height:58px;
+    height:55px;
 }
 
 nav{
     width:100%;
+
     justify-content:center;
+
     flex-wrap:wrap;
-    gap:16px;
+
+    gap:14px;
 }
 
 nav a{
-    font-size:14px;
+    font-size:13px;
 }
 
 .call-btn{
     position:fixed;
-    top:15px;
-    right:15px;
 
-    width:48px;
-    height:48px;
+    top:14px;
+    right:14px;
 
-    font-size:20px;
+    width:46px;
+    height:46px;
+
+    font-size:18px;
 }
 
 .hero{
-    padding:180px 18px 60px;
+    flex-direction:column;
+
+    text-align:center;
+
     gap:35px;
+
+    padding:170px 18px 60px;
 }
 
 .hero-content h1{
@@ -738,6 +826,14 @@ nav a{
 
 .hero-content p{
     font-size:16px;
+}
+
+.hero-image{
+    width:100%;
+}
+
+.image-box{
+    transform:none;
 }
 
 .form-section{
@@ -778,7 +874,7 @@ nav a{
 }
 
 .about-content{
-    padding-top:70px;
+    padding-top:75px;
 }
 
 .about-content h2{
@@ -805,20 +901,22 @@ footer{
 .whatsapp{
     width:58px;
     height:58px;
+
     font-size:26px;
 }
 
 .close-btn{
-    top:15px;
-    right:18px;
-    font-size:38px;
+    width:42px;
+    height:42px;
+
+    font-size:24px !important;
 }
 
 }
 
-/* =========================
+/* =========================================
    SMALL MOBILE
-========================= */
+========================================= */
 
 @media(max-width:480px){
 
@@ -843,81 +941,18 @@ footer{
 }
 
 nav{
-    gap:12px;
+    gap:10px;
 }
 
 nav a{
-    font-size:13px;
+    font-size:12px;
 }
 
+.logo img{
+    height:48px;
 }
 
-   /* =========================
-   CLOSE BUTTON FIX
-========================= */
-
-/* YE EXTRA CROSS HATA DEGA */
-body::before,
-body::after{
-    display:none !important;
-}
-
-/* POPUP CLOSE BUTTON */
-.close-btn{
-    position:fixed;
-    top:15px;
-    right:18px;
-
-    width:45px;
-    height:45px;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    border-radius:50%;
-
-    background:linear-gradient(135deg,#fff1a6,#d8b04a);
-
-    color:#4a3820;
-
-    font-size:28px;
-    font-weight:700;
-
-    cursor:pointer;
-
-    z-index:999999999;
-
-    box-shadow:
-    0 10px 25px rgba(0,0,0,.18),
-    inset 0 2px 6px rgba(255,255,255,.8);
-}
-
-/* MOBILE FIX */
-@media(max-width:768px){
-
-.close-btn{
-    top:12px;
-    right:12px;
-
-    width:42px;
-    height:42px;
-
-    font-size:24px;
-}
-
-}
-
-/* POPUP HAMESHA UPAR RAHE */
-.about-popup{
-    z-index:999999;
-}
-
-/* HEADER NICHE CHALA JAYE */
-header{
-    z-index:9999;
-}
-   
+}   
 </style>
 
 </head>
