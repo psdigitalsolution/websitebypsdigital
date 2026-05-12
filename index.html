@@ -541,6 +541,62 @@ footer h4{
 
 }
 
+/* ================= MOBILE HEADER FIX ================= */
+
+@media(max-width:768px){
+
+header{
+    padding:18px 20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo img{
+    height:48px;
+}
+
+/* NAV */
+nav{
+    display:flex;
+    align-items:center;
+    gap:18px;
+}
+
+/* ALL LINKS */
+nav a{
+    text-decoration:none;
+    color:#fff;
+    font-size:17px;
+    font-weight:600;
+}
+
+/* HIDE HOME */
+nav a:nth-child(1){
+    display:none;
+}
+
+/* HIDE CONTACT */
+nav a:nth-child(4){
+    display:none;
+}
+
+/* CALL BUTTON */
+.call-btn{
+    width:48px;
+    height:48px;
+    border-radius:50%;
+    background:#f7c948;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:22px;
+    color:#111;
+    flex-shrink:0;
+}
+
+}
+
 </style>
     
 </head>
