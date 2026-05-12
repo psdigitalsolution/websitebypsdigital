@@ -1,0 +1,1179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PS Digital Solutions</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+    scroll-behavior:smooth;
+}
+
+body{
+    background:
+    radial-gradient(circle at top left,#fffde4 0%,transparent 30%),
+    radial-gradient(circle at bottom right,#fff7c2 0%,transparent 30%),
+    linear-gradient(135deg,#fffff5,#ffffe8,#FFFFC5);
+    color:#3b2f1b;
+    overflow-x:hidden;
+}
+
+/* SCROLLBAR */
+::-webkit-scrollbar{
+    width:8px;
+}
+::-webkit-scrollbar-thumb{
+    background:#d4b96e;
+    border-radius:10px;
+}
+
+/* HEADER */
+header{
+    position:fixed;
+    top:0;
+    width:100%;
+    z-index:1000;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:14px 70px;
+    background:linear-gradient(135deg,#fff9d6,#FFFFC5,#fff2a8);
+    backdrop-filter:blur(18px);
+    box-shadow:
+    0 10px 30px rgba(0,0,0,0.12),
+    inset 0 2px 8px rgba(255,255,255,0.7);
+    border-bottom:1px solid rgba(255,255,255,0.6);
+}
+
+/* LOGO */
+.logo img{
+    height:65px;
+    object-fit:contain;
+    filter:drop-shadow(0 5px 10px rgba(0,0,0,.15));
+}
+
+nav a{
+    text-decoration:none;
+    color:#4b3b22;
+    margin:0 18px;
+    font-weight:600;
+    transition:.3s;
+    position:relative;
+}
+
+nav a:hover{
+    color:#b68b2c;
+}
+
+nav a::after{
+    content:'';
+    position:absolute;
+    left:0;
+    bottom:-5px;
+    width:0%;
+    height:2px;
+    background:#b68b2c;
+    transition:.4s;
+}
+
+nav a:hover::after{
+    width:100%;
+}
+
+/* CALL BUTTON */
+.call-btn{
+    width:52px;
+    height:52px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:22px;
+    background:linear-gradient(145deg,#ffffff,#fff3b0);
+    color:#8a6a1f;
+    cursor:pointer;
+    box-shadow:
+    0 10px 25px rgba(0,0,0,.12),
+    inset 0 2px 6px rgba(255,255,255,.8);
+}
+
+/* HERO */
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:140px 80px 60px;
+    position:relative;
+}
+
+.hero::before{
+    content:'';
+    position:absolute;
+    width:600px;
+    height:600px;
+    background:linear-gradient(#fff9c4,#ffe082);
+    border-radius:50%;
+    filter:blur(140px);
+    opacity:.45;
+    top:-200px;
+    left:-200px;
+}
+
+.hero::after{
+    content:'';
+    position:absolute;
+    width:500px;
+    height:500px;
+    background:#fff3a0;
+    border-radius:50%;
+    filter:blur(140px);
+    opacity:.35;
+    right:-100px;
+    bottom:-100px;
+}
+
+.hero-content{
+    width:55%;
+    z-index:2;
+}
+
+.hero-content h1{
+    font-size:65px;
+    line-height:1.15;
+    margin-bottom:20px;
+    font-weight:800;
+    color:#4a3820;
+}
+
+.hero-content span{
+    background:linear-gradient(to right,#d4a937,#8b6a1d);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.hero-content p{
+    font-size:20px;
+    color:#5f5135;
+    line-height:1.8;
+}
+
+/* HERO IMAGE */
+.hero-image{
+    width:40%;
+    position:relative;
+    z-index:2;
+}
+
+.image-box{
+    border-radius:30px;
+    overflow:hidden;
+    transform:perspective(1000px) rotateY(-8deg);
+    box-shadow:
+    0 25px 60px rgba(0,0,0,.18),
+    0 0 35px rgba(255,255,255,.7);
+    border:3px solid rgba(255,255,255,.6);
+}
+
+.image-box img{
+    width:100%;
+    display:block;
+}
+
+/* FORM */
+.form-section{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    margin-top:-40px;
+    position:relative;
+    z-index:10;
+}
+
+.form-box{
+    width:420px;
+    background:rgba(255,255,255,.45);
+    backdrop-filter:blur(18px);
+    border:1px solid rgba(255,255,255,.8);
+    padding:25px;
+    border-radius:25px;
+    box-shadow:
+    0 20px 40px rgba(0,0,0,.12),
+    inset 0 2px 8px rgba(255,255,255,.8);
+}
+
+.form-box h3{
+    margin-bottom:16px;
+    font-size:24px;
+    text-align:center;
+    color:#4b3b22;
+}
+
+.form-box input,
+.form-box textarea{
+    width:100%;
+    padding:13px;
+    margin-bottom:12px;
+    border:none;
+    outline:none;
+    border-radius:14px;
+    background:rgba(255,255,255,.75);
+    color:#3d2f1f;
+    box-shadow:inset 0 2px 5px rgba(0,0,0,.08);
+}
+
+.form-box button{
+    width:100%;
+    padding:13px;
+    border:none;
+    border-radius:14px;
+    background:linear-gradient(135deg,#fff1a6,#d8b04a);
+    color:#4a3820;
+    font-size:16px;
+    font-weight:700;
+    cursor:pointer;
+    box-shadow:
+    0 10px 25px rgba(0,0,0,.12),
+    inset 0 2px 5px rgba(255,255,255,.8);
+}
+
+.close-btn{
+    position:absolute;
+    top:30px;
+    right:40px;
+    font-size:45px;
+    cursor:pointer;
+    color:#8b6a1d;
+    z-index:10000;
+}
+
+/* SECTION */
+.section{
+    padding:100px 80px;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.section-title h2{
+    font-size:48px;
+    margin-bottom:10px;
+    color:#4a3820;
+}
+
+.section-title span{
+    color:#b68b2c;
+}
+
+.section-title p{
+    max-width:800px;
+    margin:auto;
+    color:#5f5135;
+    line-height:1.8;
+}
+
+/* PORTFOLIO */
+.portfolio{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:30px;
+}
+
+.card{
+    background:rgba(255,255,255,.4);
+    border-radius:28px;
+    overflow:hidden;
+    transition:.5s;
+    border:1px solid rgba(255,255,255,.7);
+    box-shadow:
+    0 18px 35px rgba(0,0,0,.12),
+    inset 0 2px 8px rgba(255,255,255,.7);
+}
+
+.card:hover{
+    transform:translateY(-10px) scale(1.02);
+}
+
+.card img{
+    width:100%;
+    height:240px;
+    object-fit:cover;
+}
+
+.card h3{
+    color:#4a3820;
+}
+
+.card p{
+    color:#5f5135 !important;
+}
+
+/* WHO */
+.who{
+    display:grid;
+    grid-template-columns:2fr 1fr;
+    gap:50px;
+    align-items:center;
+}
+
+.who p{
+    color:#5f5135;
+    line-height:2;
+    font-size:18px;
+}
+
+.stats{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+}
+
+.stat{
+    background:rgba(255,255,255,.4);
+    padding:30px;
+    border-radius:22px;
+    text-align:center;
+    box-shadow:
+    0 15px 30px rgba(0,0,0,.1),
+    inset 0 2px 8px rgba(255,255,255,.8);
+}
+
+.stat strong{
+    display:block;
+    font-size:42px;
+    color:#b68b2c;
+    margin-bottom:8px;
+}
+
+/* FOOTER */
+footer{
+    padding:80px;
+    background:linear-gradient(135deg,#fff5b2,#FFFFC5,#ffe78f);
+    box-shadow:0 -10px 30px rgba(0,0,0,.08);
+}
+
+.footer-grid{
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr 1fr;
+    gap:40px;
+}
+
+.footer-logo img{
+    width:220px;
+}
+
+footer h4{
+    color:#4a3820;
+    margin-bottom:18px;
+    font-size:22px;
+}
+
+footer p,
+footer li{
+    color:#5f5135;
+    line-height:2;
+    list-style:none;
+}
+
+/* WHATSAPP */
+.whatsapp{
+    position:fixed;
+    bottom:25px;
+    right:25px;
+    width:65px;
+    height:65px;
+    border-radius:50%;
+    background:linear-gradient(135deg,#fff0a8,#d8b04a);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:30px;
+    cursor:pointer;
+    z-index:999;
+    color:#4a3820;
+    box-shadow:
+    0 12px 30px rgba(0,0,0,.18),
+    inset 0 2px 8px rgba(255,255,255,.9);
+}
+
+/* ABOUT POPUP */
+.about-popup{
+    position:fixed;
+    top:0;
+    left:-100%;
+    width:100%;
+    height:100vh;
+    z-index:9999;
+    transition:.5s;
+    padding:60px;
+    overflow:auto;
+
+    background:
+    radial-gradient(circle at top left,#fff8d6 0%,transparent 30%),
+    radial-gradient(circle at bottom right,#fff2b8 0%,transparent 30%),
+    linear-gradient(135deg,#fffff5,#ffffeb,#FFFFC5);
+}
+
+.about-popup.active{
+    left:0;
+}
+
+.about-content{
+    max-width:900px;
+    margin:auto;
+    padding-top:60px;
+}
+
+.about-content h2{
+    font-size:55px;
+    margin-bottom:30px;
+    color:#4a3820;
+}
+
+.about-content p{
+    font-size:19px;
+    line-height:2;
+    color:#5f5135;
+    margin-bottom:20px;
+}
+
+/* MOBILE */
+@media(max-width:950px){
+
+header{
+    padding:15px 20px;
+}
+
+nav{
+    display:none;
+}
+
+.hero{
+    flex-direction:column;
+    padding:120px 25px 50px;
+}
+
+.hero-content{
+    width:100%;
+    text-align:center;
+}
+
+.hero-content h1{
+    font-size:42px;
+}
+
+.hero-image{
+    width:100%;
+    margin-top:40px;
+}
+
+.form-section{
+    margin-top:20px;
+    padding:0 20px;
+}
+
+.form-box{
+    width:100%;
+}
+
+.section{
+    padding:70px 25px;
+}
+
+.who{
+    grid-template-columns:1fr;
+}
+
+.footer-grid{
+    grid-template-columns:1fr;
+}
+
+.about-content h2{
+    font-size:38px;
+}
+
+.about-popup{
+    padding:30px 20px;
+}
+
+}
+
+
+
+</style>
+
+</head>
+
+<body>
+
+<!-- ABOUT SLIDER -->
+<div class="about-popup" id="aboutPopup">
+
+    <div class="close-btn" onclick="closeAbout()">×</div>
+
+    <div class="about-content">
+
+    <section class="about-section">
+
+        <h2>About PS Digital Solutions</h2>
+
+        <!-- IMAGES -->
+        <div style="
+        display:flex;
+        gap:40px;
+        flex-wrap:wrap;
+        justify-content:center;
+        margin-bottom:50px;
+        ">
+
+            <!-- CEO -->
+            <div style="text-align:center;">
+
+                <img src="https://i.postimg.cc/0Nc9h6Pr/IMG-20260509-WA0004.jpg"
+                style="
+                width:380px;
+                height:320px;
+                object-fit:cover;
+                border-radius:25px;
+                border:3px solid #22c55e;
+                box-shadow:0 15px 35px rgba(0,0,0,.4);
+                ">
+
+                <h3 style="margin-top:18px;font-size:28px;color:#22c55e;">
+                    CEO
+                </h3>
+
+                <p style="font-size:20px;color:#023020;">
+                    PRAYAG SAGAR
+                </p>
+
+            </div>
+
+            <!-- FOUNDER -->
+            <div style="text-align:center;">
+
+                <img src="https://i.postimg.cc/SRzqXD89/IMG-20260509-WA0005.jpg"
+                style="
+                width:380px;
+                height:320px;
+                object-fit:cover;
+                border-radius:25px;
+                border:3px solid #22c55e;
+                box-shadow:0 15px 35px rgba(0,0,0,.4);
+                ">
+
+                <h3 style="margin-top:18px;font-size:28px;color:#22c55e;">
+                    Founder
+                </h3>
+
+                <p style="font-size:20px;color:#023020;">
+                    ABHISHEK SHARMA
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- ABOUT TEXT -->
+
+        <p>
+            PS Digital Solutions is a modern and creative web development company 
+            dedicated to helping businesses grow in the digital world.
+        </p>
+
+        <p>
+            We provide professional website development, branding, graphic design, 
+            and digital marketing services for all types of businesses.
+        </p>
+
+        <p>
+            Our goal is to create powerful online identities for our clients.
+        </p>
+
+        <p>
+            We use modern technologies and creative ideas to build premium quality websites.
+        </p>
+
+        <p>
+            Every project is designed with innovation, performance, and user experience in mind.
+        </p>
+
+        <p>
+            The CEO of PS Digital Solutions is Prayag Sagar, known for creative vision and leadership.
+        </p>
+
+        <p>
+            The company was founded by Abhishek Sharma with a mission to deliver top digital solutions.
+        </p>
+
+        <p>
+            We have successfully completed multiple projects for different clients and businesses.
+        </p>
+
+        <p>
+            Our team focuses on creating fast, secure, and responsive websites.
+        </p>
+
+        <p>
+            Every website we build is mobile-friendly and user-friendly.
+        </p>
+
+        <p>
+            Customer satisfaction is always our highest priority.
+        </p>
+
+        <p>
+            We provide premium digital services at affordable prices.
+        </p>
+
+        <p>
+            Our company believes in creativity, trust, and innovation.
+        </p>
+
+        <p>
+            We work with startups, small businesses, and growing brands.
+        </p>
+
+        <p>
+            PS Digital Solutions also helps businesses with branding and online promotion.
+        </p>
+
+        <p>
+            We maintain quality and perfection in every project we deliver.
+        </p>
+
+        <p>
+            Our team follows the latest trends in web design and development.
+        </p>
+
+        <p>
+            We are passionate about helping businesses achieve digital success.
+        </p>
+
+        <p>
+            Building long-term relationships with clients is one of our core values.
+        </p>
+
+        <p>
+            PS Digital Solutions is always ready to take your business to the next level.
+        </p>
+
+    </section>
+
+</div>
+
+</div>
+
+<header>
+
+    <div class="logo">
+        <img src="https://i.postimg.cc/8cFrz4xc/LOGOOOOOOO-removebg-preview.png">
+    </div>
+
+    <nav>
+    <a href="#">Home</a>
+    <a href="javascript:void(0)" onclick="openAbout()">About</a>
+    <a href="javascript:void(0)" onclick="openService()">Services</a>
+    <a href="javascript:void(0)" onclick="openContact()">Contact</a>
+</nav>
+
+    <div class="call-btn" onclick="whatsapp()">📞</div>
+
+</header>
+
+<!-- HERO -->
+<section class="hero">
+
+    <div class="hero-content">
+        <h1>
+            Grow Business With <br>
+            <span>High Performance Website</span>
+        </h1>
+
+        <p>
+            Modern premium websites with stunning UI/UX,
+            fast loading speed and high conversion design
+            to grow your business online.
+        </p>
+    </div>
+
+    <div class="hero-image">
+
+        <div class="image-box">
+            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop">
+        </div>
+
+    </div>
+
+</section>
+
+<!-- FORM -->
+<section class="form-section">
+
+    <div class="form-box">
+
+        <h3>Get Website</h3>
+
+        <input id="name" placeholder="Name">
+        <input id="phone" placeholder="Phone">
+        <input id="email" placeholder="Email">
+
+        <textarea id="msg" placeholder="Message"></textarea>
+
+        <button onclick="sendForm()">Submit</button>
+
+    </div>
+
+</section>
+
+<!-- PORTFOLIO -->
+<section class="section">
+
+    <div class="section-title">
+        <h2>Our <span>Portfolio</span></h2>
+
+        <p>
+            Premium business websites, ecommerce stores
+            and high converting landing pages designed
+            with modern UI and smooth animations.
+        </p>
+    </div>
+
+    <div class="portfolio">
+
+        <div class="card">
+    <img src="https://i.postimg.cc/PJbrqS1r/IMG-20260509-WA0008.jpg">
+</div>
+
+<div class="card">
+    <img src="https://i.postimg.cc/SsCmZgTP/Screenshot-20260509-171526-Gallery.jpg">
+</div>
+
+<div class="card">
+    <img src="https://i.postimg.cc/fTThXWN5/IMG-20260509-WA0010.jpg">
+</div>
+
+<div class="card">
+    <img src="https://i.postimg.cc/BZ5qHw1L/IMG-20260509-WA0009.jpg">
+</div>
+
+    </div>
+
+</section>
+
+<!-- SERVICES -->
+<section class="section" id="services">
+
+    <div class="section-title">
+
+        <p style="font-size:18px;">
+            We create premium website and mobile app designs
+            with modern UI, fast performance and attractive layouts.
+        </p>
+
+    </div>
+
+    <div class="portfolio">
+
+        <!-- WEBSITE -->
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop">
+
+            <div style="padding:20px;">
+                <h3 style="margin-bottom:10px;">Website Design</h3>
+
+                <p style="color:#cbd5e1;line-height:1.8;">
+                    Modern responsive business websites with smooth UI,
+                    premium design and high speed performance.
+                </p>
+            </div>
+        </div>
+
+        <!-- WEBSITE -->
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop">
+
+            <div style="padding:20px;">
+                <h3 style="margin-bottom:10px;">Ecommerce Website</h3>
+
+                <p style="color:#cbd5e1;line-height:1.8;">
+                    High converting ecommerce stores with secure payment,
+                    mobile friendly layout and SEO optimization.
+                </p>
+            </div>
+        </div>
+
+        <!-- APP -->
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=1200&auto=format&fit=crop">
+
+            <div style="padding:20px;">
+                <h3 style="margin-bottom:10px;">Mobile App UI</h3>
+
+                <p style="color:#cbd5e1;line-height:1.8;">
+                    Premium Android and iOS app designs with modern interface,
+                    smooth navigation and stylish visuals.
+                </p>
+            </div>
+        </div>
+
+        <!-- APP -->
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?q=80&w=1200&auto=format&fit=crop">
+
+            <div style="padding:20px;">
+                <h3 style="margin-bottom:10px;">Application Development</h3>
+
+                <p style="color:#cbd5e1;line-height:1.8;">
+                    Powerful custom applications with secure backend,
+                    fast loading and attractive user experience.
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ===== ADD THIS AFTER ABOUT POPUP ===== -->
+
+<!-- SERVICES POPUP -->
+<div class="about-popup" id="servicePopup">
+
+    <div class="close-btn" onclick="closeService()">×</div>
+
+    <div class="about-content">
+
+        <h2>Select Service</h2>
+
+        <div style="
+        display:grid;
+        grid-template-columns:1fr 1fr;
+        gap:30px;
+        margin-top:50px;
+        ">
+
+            <div onclick="openWebsiteForm()" style="
+            background:rgba(255,255,255,.08);
+            padding:50px;
+            border-radius:25px;
+            cursor:pointer;
+            text-align:center;
+            border:1px solid rgba(255,255,255,.1);
+            ">
+                <h3 style="font-size:35px;">🌐 Website</h3>
+            </div>
+
+            <div onclick="openAppForm()" style="
+            background:rgba(255,255,255,.08);
+            padding:50px;
+            border-radius:25px;
+            cursor:pointer;
+            text-align:center;
+            border:1px solid rgba(255,255,255,.1);
+            ">
+                <h3 style="font-size:35px;">📱 App</h3>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- WEBSITE FORM -->
+<div class="about-popup" id="websiteFormPopup">
+
+    <div class="close-btn" onclick="closeWebsiteForm()">×</div>
+
+    <div class="about-content">
+
+        <h2>Website Details</h2>
+
+        <div class="form-box" style="width:100%;max-width:600px;margin:auto;">
+
+            <input type="text" id="webName" placeholder="Your Name" required>
+
+            <input type="text" id="webPhone" placeholder="Phone Number" required>
+
+            <input type="email" id="webEmail" placeholder="Email Address" required>
+
+            <input type="text" id="webType" placeholder="Website Type" required>
+
+            <textarea id="webMsg" placeholder="Project Details"></textarea>
+
+            <button onclick="submitWebsiteForm()">Submit</button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- APP FORM -->
+<div class="about-popup" id="appFormPopup">
+
+    <div class="close-btn" onclick="closeAppForm()">×</div>
+
+    <div class="about-content">
+
+        <h2>App Details</h2>
+
+        <div class="form-box" style="width:100%;max-width:600px;margin:auto;">
+
+            <input type="text" id="appName" placeholder="Your Name" required>
+
+            <input type="text" id="appPhone" placeholder="Phone Number" required>
+
+            <input type="email" id="appEmail" placeholder="Email Address" required>
+
+            <input type="text" id="appType" placeholder="App Type" required>
+
+            <textarea id="appMsg" placeholder="Project Details"></textarea>
+
+            <button onclick="submitAppForm()">Submit</button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="about-popup" id="contactPopup">
+
+    <div class="close-btn" onclick="closeContact()">×</div>
+
+    <div class="about-content" style="text-align:center;">
+
+        <h2>Contact Us</h2>
+
+        <div style="
+        background:rgba(255,255,255,.08);
+        padding:40px;
+        border-radius:25px;
+        margin-top:40px;
+        ">
+
+            <h3 style="font-size:35px;margin-bottom:20px;">
+                📞 9717440035
+            </h3>
+
+            <h3 style="font-size:35px;">
+                💬 WhatsApp: 9717440035
+            </h3>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+</section>
+
+<!-- FOOTER -->
+<footer id="contact">
+
+    <div class="footer-grid">
+
+        <div>
+
+            <div class="footer-logo">
+                <img src="https://i.postimg.cc/8cFrz4xc/LOGOOOOOOO-removebg-preview.png">
+            </div>
+
+            <p>
+                Premium digital marketing & web development company
+                delivering modern and customized business solutions.
+            </p>
+
+        </div>
+
+        <div>
+            <h4>Quick Links</h4>
+
+            <ul>
+                <li>Home</li>
+                <li>About</li>
+                <li>Services</li>
+                <li>Contact</li>
+            </ul>
+        </div>
+
+        <div>
+            <h4>Services</h4>
+
+            <ul>
+                <li>Website Development</li>
+                <li>SEO</li>
+                <li>Digital Marketing</li>
+                <li>UI/UX Design</li>
+            </ul>
+        </div>
+
+        <div>
+            <h4>Contact</h4>
+
+            <p>
+                📞 9717440035 <br>
+                📧 connect@psdigital.com
+            </p>
+        </div>
+
+    </div>
+
+</footer>
+
+<!-- WHATSAPP -->
+<div class="whatsapp" onclick="whatsapp()">💬</div>
+
+<script>
+
+function whatsapp(){
+    window.open('https://wa.me/9717440035?text=Hello, I want a website');
+}
+
+function sendForm(){
+
+    let data =
+`Name:${name.value}%0A
+Phone:${phone.value}%0A
+Email:${email.value}%0A
+Message:${msg.value}`;
+
+    window.open(`https://wa.me/9717440035?text=${data}`);
+}
+
+/* ABOUT POPUP */
+
+function openAbout() {
+    document.getElementById("aboutPopup").classList.add("active");
+}
+
+function closeAbout() {
+    document.getElementById("aboutPopup").classList.remove("active");
+}
+
+
+/* SERVICE POPUP */
+
+function openService() {
+    document.getElementById("servicePopup").classList.add("active");
+}
+
+function closeService() {
+    document.getElementById("servicePopup").classList.remove("active");
+}
+
+
+/* CONTACT POPUP */
+
+function openContact() {
+    document.getElementById("contactPopup").classList.add("active");
+}
+
+function closeContact() {
+    document.getElementById("contactPopup").classList.remove("active");
+}
+
+
+/* WEBSITE FORM */
+
+function openWebsiteForm() {
+    document.getElementById("websiteFormPopup").classList.add("active");
+}
+
+function closeWebsiteForm() {
+    document.getElementById("websiteFormPopup").classList.remove("active");
+}
+
+
+/* APP FORM */
+
+function openAppForm() {
+    document.getElementById("appFormPopup").classList.add("active");
+}
+
+function closeAppForm() {
+    document.getElementById("appFormPopup").classList.remove("active");
+}
+
+
+/* WEBSITE FORM SUBMIT */
+
+function submitWebsiteForm() {
+
+    let name = document.getElementById("webName").value;
+    let phone = document.getElementById("webPhone").value;
+    let email = document.getElementById("webEmail").value;
+    let type = document.getElementById("webType").value;
+    let msg = document.getElementById("webMsg").value;
+
+    if(name == "" || phone == "" || email == "" || type == ""){
+
+        alert("Please fill all required fields");
+        return;
+    }
+
+    let data =
+`🌐 WEBSITE ENQUIRY
+
+Name: ${name}
+Phone: ${phone}
+Email: ${email}
+Website Type: ${type}
+Details: ${msg}`;
+
+    window.open(
+        `https://wa.me/9717440035?text=${encodeURIComponent(data)}`
+    );
+}
+
+
+/* APP FORM SUBMIT */
+
+function submitAppForm() {
+
+    let name = document.getElementById("appName").value;
+    let phone = document.getElementById("appPhone").value;
+    let email = document.getElementById("appEmail").value;
+    let type = document.getElementById("appType").value;
+    let msg = document.getElementById("appMsg").value;
+
+    if(name == "" || phone == "" || email == "" || type == ""){
+
+        alert("Please fill all required fields");
+        return;
+    }
+
+    let data =
+`📱 APP ENQUIRY
+
+Name: ${name}
+Phone: ${phone}
+Email: ${email}
+App Type: ${type}
+Details: ${msg}`;
+
+    window.open(
+        `https://wa.me/9717440035?text=${encodeURIComponent(data)}`
+    );
+}
+
+</script>
+
+</body>
+</html>
