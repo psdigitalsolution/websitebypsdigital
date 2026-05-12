@@ -448,68 +448,320 @@ footer li{
 }
 
 /* MOBILE */
+/* =========================================
+   MOBILE PERFECT RESPONSIVE CSS
+   OLD MOBILE CSS REMOVE KARKE YE LAGAO
+========================================= */
+
 @media(max-width:950px){
 
-header{
-    padding:15px 20px;
+/* BODY */
+
+body{
+    overflow-x:hidden;
 }
+
+/* HEADER */
+
+header{
+    width:100%;
+
+    display:flex;
+    flex-direction:column;
+
+    justify-content:center;
+    align-items:center;
+
+    gap:18px;
+
+    padding:18px 15px 20px;
+
+    background:linear-gradient(135deg,#fff9d6,#FFFFC5,#fff2a8);
+
+    position:fixed;
+    top:0;
+    left:0;
+
+    z-index:9999;
+}
+
+/* LOGO */
+
+.logo{
+    width:100%;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.logo img{
+    height:58px;
+    width:auto;
+    object-fit:contain;
+}
+
+/* REMOVE PHONE BUTTON */
+
+.call-btn{
+    display:none !important;
+}
+
+/* NAVBAR */
 
 nav{
-    display:none;
+    width:100%;
+
+    display:flex !important;
+    justify-content:center;
+    align-items:center;
+
+    flex-wrap:wrap;
+
+    gap:22px;
 }
 
-.hero{
-    flex-direction:column;
-    padding:120px 25px 50px;
+nav a{
+    margin:0;
+    font-size:14px;
+    font-weight:600;
+    color:#4b3b22;
 }
+
+/* HERO */
+
+.hero{
+    min-height:auto;
+
+    flex-direction:column;
+
+    text-align:center;
+
+    gap:45px;
+
+    padding:230px 20px 70px;
+}
+
+/* HERO CONTENT */
 
 .hero-content{
     width:100%;
-    text-align:center;
 }
 
 .hero-content h1{
     font-size:42px;
+    line-height:1.2;
+
+    margin-bottom:18px;
 }
+
+.hero-content p{
+    font-size:17px;
+    line-height:1.9;
+}
+
+/* HERO IMAGE */
 
 .hero-image{
     width:100%;
-    margin-top:40px;
 }
 
+.image-box{
+    width:100%;
+
+    border-radius:30px;
+
+    transform:none !important;
+}
+
+.image-box img{
+    width:100%;
+    height:auto;
+}
+
+/* FORM */
+
 .form-section{
-    margin-top:20px;
+    width:100%;
+
+    margin-top:10px;
+
     padding:0 20px;
 }
 
 .form-box{
     width:100%;
+    max-width:100%;
 }
 
+/* SECTION */
+
 .section{
-    padding:70px 25px;
+    padding:75px 20px;
 }
+
+.section-title h2{
+    font-size:36px;
+}
+
+.section-title p{
+    font-size:16px;
+}
+
+/* PORTFOLIO */
+
+.portfolio{
+    grid-template-columns:1fr;
+    gap:25px;
+}
+
+.card{
+    width:100%;
+}
+
+.card img{
+    height:240px;
+}
+
+/* WHO */
 
 .who{
     grid-template-columns:1fr;
 }
 
-.footer-grid{
+.stats{
     grid-template-columns:1fr;
+}
+
+/* POPUP */
+
+.about-popup{
+    padding:25px 18px;
+}
+
+.about-content{
+    padding-top:65px;
 }
 
 .about-content h2{
     font-size:38px;
+    text-align:center;
 }
 
-.about-popup{
-    padding:30px 20px;
+.about-content p{
+    font-size:16px;
+    line-height:1.9;
+}
+
+/* CLOSE BUTTON */
+
+.close-btn{
+    position:fixed;
+
+    top:15px;
+    right:15px;
+
+    width:48px;
+    height:48px;
+
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:linear-gradient(135deg,#fff1a6,#d8b04a);
+
+    color:#4a3820;
+
+    font-size:28px;
+    font-weight:700;
+
+    z-index:999999;
+
+    box-shadow:
+    0 10px 25px rgba(0,0,0,.18),
+    inset 0 2px 6px rgba(255,255,255,.8);
+}
+
+/* FOOTER */
+
+footer{
+    padding:70px 22px;
+}
+
+.footer-grid{
+    grid-template-columns:1fr;
+    gap:35px;
+}
+
+.footer-logo img{
+    width:190px;
+}
+
+/* WHATSAPP */
+
+.whatsapp{
+    width:62px;
+    height:62px;
+
+    right:18px;
+    bottom:18px;
+
+    font-size:28px;
 }
 
 }
 
+/* =========================================
+   SMALL MOBILE
+========================================= */
 
+@media(max-width:480px){
 
+header{
+    padding:16px 12px 18px;
+}
+
+.logo img{
+    height:50px;
+}
+
+nav{
+    gap:16px;
+}
+
+nav a{
+    font-size:13px;
+}
+
+.hero{
+    padding:210px 16px 60px;
+}
+
+.hero-content h1{
+    font-size:33px;
+}
+
+.hero-content p{
+    font-size:15px;
+}
+
+.section-title h2{
+    font-size:30px;
+}
+
+.about-content h2{
+    font-size:30px;
+}
+
+.card img{
+    height:210px;
+}
+
+}
+
+    
 </style>
 
 </head>
