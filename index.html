@@ -9,33 +9,13 @@
 
 <style>
 
-/* ===============================
-   PS DIGITAL SOLUTIONS
-   FINAL PERFECT CSS
-   MOBILE + DESKTOP OPTIMIZED
-=============================== */
-
+/* ================= RESET ================= */
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
     font-family:'Poppins',sans-serif;
 }
-
-html{
-    scroll-behavior:smooth;
-}
-
-:root{
-    --gold:#f7c948;
-    --gold-dark:#d89b00;
-    --dark:#0f172a;
-    --dark-2:#020617;
-    --white:#ffffff;
-    --gray:#cbd5e1;
-}
-
-/* BODY */
 
 body{
     background:
@@ -46,361 +26,152 @@ body{
     overflow-x:hidden;
 }
 
-/* SCROLLBAR */
-
-::-webkit-scrollbar{width:8px}
-::-webkit-scrollbar-thumb{
-    background:linear-gradient(var(--gold),var(--gold-dark));
-    border-radius:20px;
-}
-
 /* ================= HEADER ================= */
-
 header{
     position:fixed;
     top:0;
-    left:0;
     width:100%;
-    z-index:10000;
-
+    z-index:1000;
+    padding:16px 60px;
     display:flex;
     justify-content:space-between;
     align-items:center;
-
-    padding:16px 70px;
-
-    background:rgba(15,23,42,.78);
-    backdrop-filter:blur(18px);
-
-    border-bottom:1px solid rgba(255,255,255,.08);
+    background:rgba(2,6,23,.85);
+    backdrop-filter:blur(16px);
 }
 
-.logo img{
-    height:58px;
-    filter:drop-shadow(0 4px 12px rgba(247,201,72,.35));
-}
-
-nav{
-    display:flex;
-    gap:34px;
-}
-
-nav a{
-    color:#fff;
-    text-decoration:none;
-    font-weight:600;
-    font-size:15px;
-    position:relative;
-}
-
-nav a::after{
-    content:'';
-    position:absolute;
-    left:0;
-    bottom:-6px;
-    width:0;
-    height:2px;
-    background:linear-gradient(to right,var(--gold),#fff);
-    transition:.3s;
-}
-
-nav a:hover::after{width:100%}
-nav a:hover{color:var(--gold)}
-
-.call-btn{
-    width:52px;
-    height:52px;
-    border-radius:50%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    background:linear-gradient(135deg,var(--gold),#fff0a8);
-    color:#111827;
-    font-size:22px;
-    cursor:pointer;
-    box-shadow:0 10px 25px rgba(247,201,72,.35);
-}
-
-/* ================= HERO ================= */
-
+/* ================= HERO FIX ================= */
 .hero{
     min-height:100vh;
-    padding:160px 80px 80px;
-
-    display:flex;
+    padding:150px 60px 80px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
     align-items:center;
-    justify-content:space-between;
     gap:60px;
 }
 
 .hero-content{
-    width:55%;
+    max-width:600px;
 }
 
 .hero-content h1{
-    font-size:72px;
+    font-size:64px;
     line-height:1.1;
-    margin-bottom:22px;
-    font-weight:800;
-}
-
-.hero-content span{
-    background:linear-gradient(to right,var(--gold),#fff0a8);
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
 }
 
 .hero-content p{
-    font-size:20px;
-    color:var(--gray);
-    line-height:1.9;
+    margin-top:18px;
+    font-size:18px;
+    color:#cbd5e1;
 }
 
 .hero-image{
-    width:42%;
+    display:flex;
+    justify-content:center;
 }
 
 .image-box{
-    border-radius:30px;
+    max-width:480px;
+    border-radius:28px;
     overflow:hidden;
-    box-shadow:
-    0 25px 60px rgba(0,0,0,.45),
-    0 0 40px rgba(247,201,72,.18);
+    box-shadow:0 30px 70px rgba(0,0,0,.45);
 }
 
-.image-box img{
-    width:100%;
-    display:block;
-}
-
-/* ================= FORM ================= */
-
-.form-section{
-    display:flex;
-    justify-content:center;
-    margin-top:-30px;
-}
-
-.form-box{
-    width:440px;
-    background:rgba(255,255,255,.07);
-    backdrop-filter:blur(20px);
-    border:1px solid rgba(255,255,255,.1);
-    border-radius:26px;
-    padding:34px;
-}
-
-.form-box h3{
-    text-align:center;
-    font-size:28px;
-    margin-bottom:20px;
-}
-
-.form-box input,
-.form-box textarea{
-    width:100%;
-    padding:14px 18px;
-    margin-bottom:14px;
-    border-radius:16px;
-    border:1px solid rgba(255,255,255,.08);
-    background:rgba(255,255,255,.07);
-    color:#fff;
-    outline:none;
-}
-
-.form-box button{
-    width:100%;
-    padding:16px;
-    border:none;
-    border-radius:18px;
-    font-size:16px;
-    font-weight:700;
-    cursor:pointer;
-    background:linear-gradient(135deg,var(--gold),#fff0a8);
-    color:#111827;
-}
-
-/* ================= SECTION ================= */
-
+/* ================= SECTION FIX ================= */
 .section{
-    padding:100px 80px;
-}
-
-.section-title{
-    text-align:center;
-    margin-bottom:60px;
-}
-
-.section-title h2{
-    font-size:54px;
-}
-
-.section-title span{color:var(--gold)}
-
-.section-title p{
-    max-width:800px;
+    padding:100px 60px;
+    max-width:1300px;
     margin:auto;
-    color:var(--gray);
-    line-height:1.9;
 }
-
-/* ================= CARDS ================= */
 
 .portfolio{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:34px;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:32px;
 }
 
+/* ================= CARD FIX ================= */
 .card{
-    border-radius:28px;
+    background:rgba(255,255,255,.06);
+    border-radius:24px;
     overflow:hidden;
-    background:rgba(255,255,255,.05);
-    border:1px solid rgba(255,255,255,.08);
     transition:.4s;
 }
 
 .card:hover{
-    transform:translateY(-10px);
-    box-shadow:0 20px 40px rgba(247,201,72,.2);
+    transform:translateY(-8px);
+    box-shadow:0 25px 50px rgba(247,201,72,.25);
 }
 
 .card img{
     width:100%;
-    height:240px;
+    height:220px;
     object-fit:cover;
 }
 
-/* ================= POPUPS ================= */
-
-.about-popup{
-    position:fixed;
-    inset:0;
-    background:
-    radial-gradient(circle at top left,rgba(247,201,72,.15),transparent 30%),
-    linear-gradient(135deg,#020617,#0f172a);
-    z-index:99999;
-    display:none;
-    overflow:auto;
-}
-
-.about-popup.active{display:block}
-
-.about-content{
-    max-width:1100px;
-    margin:auto;
-    padding:80px 20px;
-    position:relative;
-}
-
-.close-btn{
-    position:absolute;
-    top:20px;
-    right:20px;
-    width:52px;
-    height:52px;
-    border-radius:50%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:28px;
-    font-weight:700;
-    cursor:pointer;
-    background:linear-gradient(135deg,var(--gold),#fff0a8);
-    color:#111827;
-}
-
-/* ================= FOOTER ================= */
-
+/* ================= FOOTER FIX ================= */
 footer{
-    padding:80px 80px;
     background:#020617;
-    border-top:1px solid rgba(255,255,255,.08);
+    padding:80px 60px;
 }
 
 .footer-grid{
+    max-width:1300px;
+    margin:auto;
     display:grid;
     grid-template-columns:2fr 1fr 1fr 1fr;
-    gap:50px;
-}
-
-footer h4{
-    font-size:22px;
-    margin-bottom:18px;
-}
-
-footer p, footer li{
-    color:var(--gray);
-    line-height:1.9;
-    list-style:none;
-}
-
-footer a{
-    color:var(--gray);
-    text-decoration:none;
+    gap:40px;
 }
 
 /* ================= WHATSAPP ================= */
-
 .whatsapp{
     position:fixed;
     right:22px;
     bottom:22px;
-    width:64px;
-    height:64px;
+    width:60px;
+    height:60px;
     border-radius:50%;
-    background:linear-gradient(135deg,#25D366,#7dffb0);
-    color:#fff;
-    font-size:30px;
+    background:#25D366;
     display:flex;
     align-items:center;
     justify-content:center;
-    cursor:pointer;
-    z-index:9999;
+    font-size:28px;
 }
 
-/* ================= MOBILE ================= */
-
-@media(max-width:950px){
-
-header{padding:14px 18px}
-.call-btn{display:none}
+/* ================= MOBILE PERFECT ================= */
+@media(max-width:900px){
 
 .hero{
-    flex-direction:column;
+    grid-template-columns:1fr;
     text-align:center;
-    padding:130px 20px 60px;
 }
 
-.hero-content,
-.hero-image{width:100%}
-
-.hero-content h1{font-size:42px}
-.hero-content p{font-size:16px}
-
-.section{padding:70px 20px}
-.section-title h2{font-size:36px}
-
-.footer-grid{grid-template-columns:1fr}
-footer{padding:60px 20px}
+.hero-content{
+    margin:auto;
 }
 
-@media(max-width:500px){
-
-.hero-content h1{font-size:30px}
-.hero-content p{font-size:14px}
-
-.logo img{height:42px}
-nav a{font-size:12px}
-
-.whatsapp{
-    width:56px;
-    height:56px;
-    font-size:26px;
+.footer-grid{
+    grid-template-columns:1fr;
+    text-align:center;
 }
-}    
-</style>
 
+}
+
+@media(max-width:480px){
+
+.hero-content h1{
+    font-size:32px;
+}
+
+.hero-content p{
+    font-size:14px;
+}
+
+header{
+    padding:12px 16px;
+}
+
+}
 </head>
 
 <body>
