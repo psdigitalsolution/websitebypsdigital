@@ -507,7 +507,246 @@ nav{
 }
 
 }
+    
+/* =========================
+   FULL MOBILE RESPONSIVE
+========================= */
 
+@media(max-width:950px){
+
+/* HEADER */
+
+header{
+    padding:14px 18px;
+}
+
+.logo img{
+    height:50px;
+}
+
+nav{
+    display:none;
+}
+
+.call-btn{
+    width:45px;
+    height:45px;
+    font-size:18px;
+}
+
+/* HERO */
+
+.hero{
+    flex-direction:column;
+    padding:120px 20px 40px;
+    text-align:center;
+    gap:40px;
+}
+
+.hero-content{
+    width:100%;
+}
+
+.hero-content h1{
+    font-size:38px;
+    line-height:1.3;
+}
+
+.hero-content p{
+    font-size:16px;
+    line-height:1.8;
+}
+
+.hero-image{
+    width:100%;
+}
+
+.image-box{
+    transform:none;
+    border-radius:22px;
+}
+
+.image-box img{
+    height:auto;
+}
+
+/* FORM */
+
+.form-section{
+    margin-top:20px;
+    padding:0 15px;
+}
+
+.form-box{
+    width:100%;
+    padding:22px;
+    border-radius:22px;
+}
+
+.form-box h3{
+    font-size:22px;
+}
+
+.form-box input,
+.form-box textarea{
+    font-size:15px;
+    padding:12px;
+}
+
+/* SECTION */
+
+.section{
+    padding:70px 20px;
+}
+
+.section-title h2{
+    font-size:34px;
+}
+
+.section-title p{
+    font-size:15px;
+}
+
+/* PORTFOLIO */
+
+.portfolio{
+    grid-template-columns:1fr;
+    gap:22px;
+}
+
+.card img{
+    height:220px;
+}
+
+/* WHO */
+
+.who{
+    grid-template-columns:1fr;
+    gap:30px;
+}
+
+.who p{
+    font-size:16px;
+}
+
+.stats{
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+}
+
+.stat{
+    padding:20px;
+}
+
+.stat strong{
+    font-size:28px;
+}
+
+/* FOOTER */
+
+footer{
+    padding:60px 20px;
+}
+
+.footer-grid{
+    grid-template-columns:1fr;
+    gap:35px;
+}
+
+.footer-logo img{
+    width:180px;
+}
+
+/* POPUPS */
+
+.about-popup{
+    padding:25px 15px;
+}
+
+.about-content{
+    padding-top:50px;
+}
+
+.about-content h2{
+    font-size:34px;
+    text-align:center;
+}
+
+.about-content p{
+    font-size:16px;
+    line-height:1.9;
+}
+
+/* ABOUT IMAGES */
+
+.about-section div img{
+    width:100% !important;
+    height:260px !important;
+}
+
+/* CLOSE BUTTON */
+
+.close-btn{
+    top:15px;
+    right:20px;
+    font-size:38px;
+}
+
+/* SERVICE BOX */
+
+#servicePopup .about-content div{
+    grid-template-columns:1fr !important;
+}
+
+/* CONTACT POPUP */
+
+#contactPopup h3{
+    font-size:24px !important;
+    line-height:1.8;
+}
+
+/* WHATSAPP */
+
+.whatsapp{
+    width:58px;
+    height:58px;
+    font-size:26px;
+    bottom:18px;
+    right:18px;
+}
+
+}
+
+
+/* EXTRA SMALL DEVICES */
+
+@media(max-width:500px){
+
+.hero-content h1{
+    font-size:30px;
+}
+
+.section-title h2{
+    font-size:28px;
+}
+
+.about-content h2{
+    font-size:28px;
+}
+
+.stats{
+    grid-template-columns:1fr;
+}
+
+.card img{
+    height:200px;
+}
+
+.form-box{
+    padding:18px;
+}
+
+}
 
 
 </style>
@@ -980,9 +1219,6 @@ nav{
     </div>
 
 </div>
-
-
-</section>
 
 <!-- FOOTER -->
 <footer id="contact">
